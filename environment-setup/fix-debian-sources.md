@@ -1,0 +1,21 @@
+# Résolution des erreurs APT (Debian 10 EOL)
+
+Lors de la préparation de ce laboratoire sur la VM Mobexler, le gestionnaire de paquets `apt` renvoyait des erreurs **404 Not Found**. Cela est dû au fait que Debian 10 (Buster) a atteint sa fin de vie (EOL) et que les dépôts ont été déplacés vers les serveurs d'archives.
+
+## Problème identifié
+Tentative de connexion aux serveurs `deb.debian.org` ou `security.debian.org` qui ne contiennent plus les paquets pour cette version.
+
+## Solution appliquée
+1. Modification du fichier `/etc/apt/sources.list` pour pointer vers **archive.debian.org**.
+2. Nettoyage du dossier `/etc/apt/sources.list.d/` pour éviter les conflits de signatures GPG (ex: dépôts Metasploit/Docker obsolètes).
+
+### Configuration fonctionnelle du `sources.list` :
+```text
+deb [http://archive.debian.org/debian/](http://archive.debian.org/debian/) buster main contrib non-free
+deb [http://archive.debian.org/debian-security/](http://archive.debian.org/debian-security/) buster/updates main contrib non-free
+
+# Commande de mise à jour forcée :
+### Comme les archives sont techniquement expirées, il faut ignorer la vérification de validité temporelle :
+```text
+sudo apt update -o Acquire::Check-Valid-Until=false
+### Ce correctif a permis l'installation des dépendances nécessaires au laboratoire

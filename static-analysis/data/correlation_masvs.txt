@@ -1,0 +1,21 @@
+Corrélation MASVS - InsecureBankv2
+---------------------------------
+Vulnérabilité : Stockage de secrets en clair dans le code
+Référence MASVS : MASVS-STORAGE-1 (Ex-MSTG-STORAGE-14)
+Description : Le système ne doit pas stocker de données sensibles de manière non sécurisée sur l'appareil.
+Preuve : Présence d'une clé AES en Base64 dans la section 'Hardcoded Secrets' de MobSF.
+Impact : Un attaquant peut déchiffrer les données locales de tous les utilisateurs.
+
+Vulnérabilité : Autorisation du trafic HTTP (Non chiffré)
+Référence MASVS : MASVS-NETWORK-1
+Description : L'application doit chiffrer tout le trafic réseau sensible avec TLS.
+Preuve : usesCleartextTraffic='true' identifié dans le Manifeste par MobSF.
+Impact : Interception des identifiants bancaires via une attaque Man-In-The-Middle.
+
+Tests MASTG complémentaires :
+---------------------------
+1. Référence : MASTG-TEST-0020 (Testing Local Storage)
+   Objectif : Vérifier manuellement les fichiers XML dans /data/data/ pour voir si les mots de passe y sont écrits après une connexion.
+
+2. Référence : MASTG-TEST-0029 (Testing Custom Certificate Stores)
+   Objectif : Tenter d'intercepter le trafic avec Burp Suite pour vérifier si l'application accepte des certificats auto-signés.

@@ -1,0 +1,6 @@
+Permissions dangereuses identifiées :
+------------------------
+- SEND_SMS : Peut être utilisé pour envoyer des SMS premium à l'insu de l'utilisateur.
+- READ_CONTACTS : Risque d'exfiltration de données personnelles.
+- WRITE_EXTERNAL_STORAGE : Permet d'écrire sur la SD Card (accessible par d'autres apps).
+- ACCESS_COARSE_LOCATION : Géolocalisation de l'utilisateur.

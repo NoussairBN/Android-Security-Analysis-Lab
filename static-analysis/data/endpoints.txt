@@ -1,0 +1,6 @@
+Endpoints identifiés :
+-------------------
+- server_ip (Hardcodé en tant que label de ressource)
+- server_port (Hardcodé en tant que label de ressource)
+- https://reports.exodus-privacy.eu.org/trackers/ (Tracker trouvé par MobSF)
+- Google AdMob/Analytics Endpoints

@@ -1,0 +1,8 @@
+Vulnérabilités critiques de code :
+------------------------
+- Cryptographie faible : Utilisation de MD5/SHA-1 pour le hachage.
+- Clé AES Hardcodée : La clé de chiffrement est exposée dans le code source.
+- Fuite de logs (Logcat) : Données sensibles envoyées dans les journaux système.
+- SQL Injection potentielle : Mauvaise manipulation des requêtes SQLite.
+Secrets identifiés :
+- Clé de chiffrement probable (Base64) : w41pUAmd6TXdoU2/Z72GoKBjAyNw4B9JmpSTu2qFRaDsI7+5gLrSInCAebksSHto

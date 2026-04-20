@@ -1,0 +1,4 @@
+Configuration réseau :
+-------------------
+usesCleartextTraffic : True (Autorise le trafic HTTP non chiffré)
+networkSecurityConfig : ABSENT (Aucune restriction de domaine ou Certificate Pinning)

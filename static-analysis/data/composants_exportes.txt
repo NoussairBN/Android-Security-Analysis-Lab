@@ -1,0 +1,6 @@
+Composants exportés identifiés :
+-------------------
+- .PostLogin (Activity) : Vulnérable StrandHogg 2.0.
+- .DoTransfer (Activity) : Permet potentiellement de forcer un transfert sans passer par l'UI.
+- .ViewStatement (Activity) : Accès direct aux relevés bancaires.
+- .TrackUserContentProvider (Provider) : Fuite potentielle de base de données.
